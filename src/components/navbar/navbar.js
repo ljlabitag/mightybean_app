@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Navbar() {
     return(
-    <nav className='flex flex-row items-center fixed z-20 top-0 start-0 align-middle justify-between w-full h-30 py-4 px-8 border-b-2 shadow-sm'>
+    <nav className='flex flex-row items-center align-middle justify-between w-full h-30 py-4 px-8 border-b-2 shadow-sm'>
         <div className='flex align-middle items-center basis-1/5 justify-start'>
             <Image className='max-w-10 max-h-10 mr-2'
                     src='/MightyBean Logo.svg'
