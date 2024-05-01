@@ -11,7 +11,7 @@ export default function Navbar() {
                     alt='Logo' 
                     width={100} 
                     height={100}
-                    layout='responsive'/>
+                    />
             <Link className='align-middle items-center' href={"/"}>MightyBean</Link>
         </div>
         <div className='flex basis-2/5 justify-around'>
