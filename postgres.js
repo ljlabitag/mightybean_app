@@ -28,6 +28,8 @@ const pool = new Pool({
 async function dbQuery(queryString) {
     let client = await pool.connect();
     let result = await client.query(queryString);
+    // release the client
+    client.release()
     return result.rows
 }
 
