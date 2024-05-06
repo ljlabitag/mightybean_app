@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 let format = require('pg-format')
 const { dbQuery } = require('../../../../postgres')
 
@@ -6,9 +6,36 @@ const { dbQuery } = require('../../../../postgres')
  * Get all personnel
  * @returns 
  */
-export async function GET() {
+export async function GET(request: NextRequest) {
+    let searchParams = request.nextUrl.searchParams
+    let email = searchParams.get("email")
+    let password = searchParams.get("password")
+    let whereClause = ``
+
+    // Add search params if any
+    // EMAIL
+    if (email != null) {
+        whereClause += (whereClause != '') ? 'AND' : 'WHERE'
+        whereClause += `
+            email = $$${email}$$
+        `
+    }
+    // PASSWORD
+    if (password != null) {
+        whereClause += (whereClause != '') ? 'AND' : 'WHERE'
+        whereClause += `
+        password = $$${password}$$
+        `
+    }
+
     // Build Query
-    let query = `SELECT * FROM public.personnel`;
+    let query = `
+        SELECT
+            *
+        FROM 
+            public.personnel
+        ${whereClause}
+    `;
     // Run Query
     let result = await dbQuery(query);
     // Return result

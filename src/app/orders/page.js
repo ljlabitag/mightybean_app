@@ -1,8 +1,10 @@
+
 import CartItem from "../../components/menu/cart_item";
 import Item from "../../components/item/item";
 import SectionHeader from "../../components/general/section_header";
 
 export default function Orders() {
+
     return(
         <div className="flex flex-row min-h-[580px] px-8 py-2">
             <form className='basis-4/6 pl-10 pr-14 py-4'>

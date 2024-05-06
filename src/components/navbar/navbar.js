@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import SignInButton from "../buttons/signInButton"
 
 export default function Navbar() {
     return(
@@ -18,7 +19,7 @@ export default function Navbar() {
             <Link href={"/orders"}>Orders</Link>
             <Link href={"/menu"}>Menu</Link>
             <Link href={"/reports"}>Reports</Link>
-            <Link href={"/"}>Login</Link>
+            <SignInButton/>
         </div>
     </nav>
     )
