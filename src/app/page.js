@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
   <main className='flex min-h-[560px]' style={bgImage}>
-    <div className='basis-1/2 p-24'>
+    <div className='basis-3/4 p-24'>
       <Jumbotron/>
     </div>
   </main>

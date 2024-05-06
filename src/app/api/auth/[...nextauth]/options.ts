@@ -6,12 +6,6 @@ import GetUserCredentials from "../../../helpers/credentials";
 
 export const options: NextAuthOptions = {
     providers: [
-        // Google OAuth
-        GoogleProvider({
-            clientId: process.env.GOOGLE_ID as string,
-            clientSecret: process.env.GOOGLE_SECRET as string,
-        }),
-
         CredentialsProvider({
             name: "Credentials",
             credentials: {
@@ -34,6 +28,12 @@ export const options: NextAuthOptions = {
                     return user
                 }
             }
-        })
+        }),
+    
+        // Google OAuth
+        GoogleProvider({
+            clientId: process.env.GOOGLE_ID as string,
+            clientSecret: process.env.GOOGLE_SECRET as string,
+        }),
     ],
 }
