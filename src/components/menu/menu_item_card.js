@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function ItemCard({category, name, price, key}) {
+export default function MenuItemCard({category, name, price, key}) {
     return(
         <section className="w-60 h-40 bg-[#F8FAE5] border-[#43766C] border-2 shadow rounded-xl">
             <Image className="rounded-full my-2 mx-auto"

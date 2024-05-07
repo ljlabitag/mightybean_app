@@ -126,3 +126,55 @@ export async function DELETE(request: Request) {
 
     return NextResponse.json({ id: orderItemId });
 }
+
+/**
+ * Retrieve order items by orderID
+ * 
+ * @param request 
+ * @returns 
+ */
+export async function GET(request: Request) {
+    let url = request.url
+    let order_id = await apiHelper.getIdParam(url)
+
+    // Validate orderID (optional step)
+    if (!order_id) {
+        return NextResponse.json(
+            { error: 'Invalid request. OrderID is missing.' },
+            { status: 400 }
+        );
+    }
+
+    // Query database to retrieve order items based on orderID
+    let query = `
+        SELECT
+            *
+        FROM
+            public.order_item
+        WHERE
+            order_id = ${order_id}
+    `;
+
+    try {
+        const result = await dbQuery(query);
+
+        // If no result found, return error
+        if (result == null || result.length == 0) {
+            return NextResponse.json(
+                { error: 'No order items found for the provided orderID.' },
+                { status: 404 }
+            );
+        }
+
+        // Send response with order items array
+        return NextResponse.json(result);
+        
+    } catch (error) {
+        // Handle database query error
+        console.error('Error retrieving order items:', error.message);
+        return NextResponse.json(
+            { error: 'Internal server error.' },
+            { status: 500 }
+        );
+    }
+}

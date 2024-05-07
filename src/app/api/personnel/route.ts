@@ -9,7 +9,7 @@ const { dbQuery } = require('../../../../postgres')
 export async function GET(request: NextRequest) {
     let searchParams = request.nextUrl.searchParams
     let email = searchParams.get("email")
-    let password = searchParams.get("password")
+    // let password = searchParams.get("password")
     let whereClause = ``
 
     // Add search params if any
@@ -20,13 +20,13 @@ export async function GET(request: NextRequest) {
             email = $$${email}$$
         `
     }
-    // PASSWORD
-    if (password != null) {
-        whereClause += (whereClause != '') ? 'AND' : 'WHERE'
-        whereClause += `
-        password = $$${password}$$
-        `
-    }
+    // // PASSWORD
+    // if (password != null) {
+    //     whereClause += (whereClause != '') ? 'AND' : 'WHERE'
+    //     whereClause += `
+    //     password = $$${password}$$
+    //     `
+    // }
 
     // Build Query
     let query = `

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import GetItems from "../../app/helpers/get_items";
-import ItemCard from "./item_card";
+import MenuItemCard from "./menu_item_card";
 
 export default function MenuCategory({ category }) {
     const [categorizedItems, setCategorizedItems] = useState(null);
@@ -26,7 +26,7 @@ export default function MenuCategory({ category }) {
         return (
             <div className="grid grid-cols-5 gap-4">
                 {coffeeItemsArray.map((item, index) => (
-                    <ItemCard
+                    <MenuItemCard
                         key={index} // Consider using a unique key, like item ID if available
                         category="coffee.jpeg"
                         name={item.item_name}
@@ -42,7 +42,7 @@ export default function MenuCategory({ category }) {
         return (
             <div className="grid grid-cols-5 gap-4">
                 {milkteaItemsArray.map((item, index) => (
-                    <ItemCard
+                    <MenuItemCard
                         key={index}
                         category="milktea.png"
                         name={item.item_name}
@@ -58,7 +58,7 @@ export default function MenuCategory({ category }) {
         return (
             <div className="grid grid-cols-5 gap-4">
                 {lemonadeItemsArray.map((item, index) => (
-                    <ItemCard
+                    <MenuItemCard
                         key={index} // Consider using a unique key, like item ID if available
                         category="lemonade.jpeg"
                         name={item.item_name}

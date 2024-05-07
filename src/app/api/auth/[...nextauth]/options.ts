@@ -20,12 +20,12 @@ export const options: NextAuthOptions = {
                 }
             },
             async authorize(credentials) {
-                const user = await GetUserCredentials(credentials.email, credentials.password)
+                const user = await GetUserCredentials(credentials.email)
                 
-                if(user == null) {
-                    return null
-                } else {
+                if(user.password === credentials.password) {
                     return user
+                } else {
+                    return null
                 }
             }
         }),
