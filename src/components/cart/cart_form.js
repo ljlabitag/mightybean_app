@@ -87,14 +87,14 @@ export default function CartForm() {
     }
     if (cartItemsArray.length === 0) {
         return(
-            <h1 className='text-gray-400 align-center text-center text-2xl w-[450px] max-h-[500px] mx-auto mt-8 px-6 pt-4 rounded-2xl border-gray-300 border-2'>Your cart is empty</h1>
+            <h1 className='text-gray-400 bg-white align-center text-center text-2xl w-[450px] max-h-[500px] mx-auto mt-8 px-6 pt-4 rounded-2xl border-gray-300 border-2'>Your cart is empty</h1>
         )
     }
 
     let totalPrice = 0;
     cartItemsArray.forEach(cartItem => totalPrice += cartItem.item_price*cartItem.quantity)
     return (
-        <form className="w-[450px] max-h-[500px] mx-auto mt-8 px-6 pt-4 rounded-2xl border-gray-300 border-2">
+        <form className="w-[450px] max-h-[500px] mx-auto mt-8 px-6 bg-white pt-4 rounded-2xl border-gray-300 border-2">
             <SectionHeader title='Cart'/>
             <div className=''>
             {cartItemsArray.map((cartItem, index) => (

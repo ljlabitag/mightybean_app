@@ -52,7 +52,7 @@ export default function Navbar() {
     };
 
     return(
-    <nav className='flex flex-row items-center align-middle justify-between w-full h-30 py-4 px-8 border-b-2 shadow-sm'>
+    <nav className='flex flex-row items-center align-middle justify-between w-full h-30 font-bold py-4 px-8 border-b-2 shadow-sm'>
         <div className='flex align-middle items-center basis-1/4 justify-start'>
             <Image className='max-w-10 max-h-10 mr-2'
                     src='/MightyBean Logo.svg'
@@ -61,7 +61,7 @@ export default function Navbar() {
                     width={100} 
                     height={100}
                     />
-            <Link className='align-middle items-center' href={"/"}>MightyBean</Link>
+            <Link className='align-middle font-extrabold font-[#43766C] items-center' href={"/"}>MightyBean</Link>
         </div>
         <div className='flex basis-2/4 justify-around align-middle items-center pl-10'>
             <SubmitButton 
@@ -71,7 +71,7 @@ export default function Navbar() {
              />
             <Link className='align-middle items-center' href={"/orders"}>Orders</Link>
             <Link className='align-middle items-center' href={"/menu"}>Menu</Link>
-            <Link className='align-middle items-center' href={"/reports"}>Reports</Link>
+            {/* <Link className='align-middle items-center' href={"/reports"}>Reports</Link> */}
             <SignInButton/>
         </div>
     </nav>

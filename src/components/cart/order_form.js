@@ -80,7 +80,7 @@ export default function OrderForm() {
     return (
         <form onSubmit={handleSubmit} className='basis-4/6 p-8'>
             <h1 className="text-[#43766C] font-bold text-2xl text-left mt-2 mb-2">Coffee Selection</h1>
-            <div className='max-h-[250px] overflow-scroll p-6 mb-12 border-2 border-gray-500'>
+            <div className='max-h-[250px] bg-white overflow-scroll p-6 mb-12 border-2 border-gray-500'>
                 {coffeeItemsArray.map((item, index) => (
                     <OrderItem
                         id={item.item_id}
@@ -93,7 +93,7 @@ export default function OrderForm() {
             </div>
 
             <h1 className="text-[#43766C] font-bold text-2xl text-left mt-2 mb-2">Milktea Flavors</h1>
-            <div className='max-h-[250px] overflow-scroll p-6 mb-12 border-2 border-gray-500'>
+            <div className='max-h-[250px] overflow-scroll bg-white p-6 mb-12 border-2 border-gray-500'>
                 {milkteaItemsArray.map((item, index) => (
                     <OrderItem
                         id={item.item_id}
@@ -106,7 +106,7 @@ export default function OrderForm() {
             </div>
 
             <h1 className="text-[#43766C] font-bold text-2xl text-left mt-2 mb-2">Lemonade Series</h1>
-            <div className='max-h-[250px] overflow-scroll p-6 mb-6 border-2 border-gray-500'>
+            <div className='max-h-[250px] overflow-scroll bg-white p-6 mb-6 border-2 border-gray-500'>
                 {lemonadeItemsArray.map((item, index) => (
                     <OrderItem
                         id={item.item_id}
